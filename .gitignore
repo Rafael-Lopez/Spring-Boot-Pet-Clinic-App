@@ -101,6 +101,7 @@ local.properties
 *.war
 *.ear
 *.db
+*.original
 
 ######################
 # Windows
