@@ -1,2 +1,2 @@
-# sfg-pet-clinic
-SFG Pet Clinic
+# Spring Boot Pet Clinic App
+Spring Boot Pet Clinic
