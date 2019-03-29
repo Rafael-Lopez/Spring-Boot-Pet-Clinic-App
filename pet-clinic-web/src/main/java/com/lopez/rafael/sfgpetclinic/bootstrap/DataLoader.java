@@ -4,6 +4,7 @@ import com.lopez.rafael.sfgpetclinic.model.Owner;
 import com.lopez.rafael.sfgpetclinic.model.Vet;
 import com.lopez.rafael.sfgpetclinic.services.OwnerService;
 import com.lopez.rafael.sfgpetclinic.services.VetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +14,7 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-
+    @Autowired
     public DataLoader(OwnerService ownerService, VetService vetService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
@@ -29,25 +30,25 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Fiona");
-        owner1.setLastName("Glenanne");
+        owner2.setId(2L);
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glenanne");
 
         ownerService.save(owner2);
 
         System.out.println("Loaded owners...");
 
         Vet vet1 = new Vet();
-        owner1.setId(1L);
-        owner1.setFirstName("Sam");
-        owner1.setLastName("Axe");
+        vet1.setId(1L);
+        vet1.setFirstName("Sam");
+        vet1.setLastName("Axe");
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        owner1.setId(2L);
-        owner1.setFirstName("Jessie");
-        owner1.setLastName("Porter");
+        vet2.setId(2L);
+        vet2.setFirstName("Jessie");
+        vet2.setLastName("Porter");
 
         vetService.save(vet2);
 
