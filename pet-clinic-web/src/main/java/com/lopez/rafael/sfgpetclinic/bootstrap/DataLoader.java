@@ -4,8 +4,6 @@ import com.lopez.rafael.sfgpetclinic.model.Owner;
 import com.lopez.rafael.sfgpetclinic.model.Vet;
 import com.lopez.rafael.sfgpetclinic.services.OwnerService;
 import com.lopez.rafael.sfgpetclinic.services.VetService;
-import com.lopez.rafael.sfgpetclinic.services.map.OwnerServiceMap;
-import com.lopez.rafael.sfgpetclinic.services.map.VetServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,9 +14,9 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
 
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
